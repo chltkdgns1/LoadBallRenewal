@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="firebase_database_url" translatable="false">https://load-ball-4422682-default-rtdb.firebaseio.com/</string>
+  <string name="gcm_defaultSenderId" translatable="false">386304222344</string>
+  <string name="google_storage_bucket" translatable="false">loadball-a4c8a.appspot.com</string>
+  <string name="project_id" translatable="false">loadball-a4c8a</string>
+  <string name="google_api_key" translatable="false">AIzaSyAIOvUQS9E6fDP6OzbbhCbY2ybk3YrgJeQ</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAIOvUQS9E6fDP6OzbbhCbY2ybk3YrgJeQ</string>
+  <string name="google_app_id" translatable="false">1:386304222344:android:7b68ca17e1755f578b6b3d</string>
+  <string name="default_web_client_id" translatable="false">386304222344-8sdt3vbj7v3f0d9ghddhn6kg2u2hpcf8.apps.googleusercontent.com</string>
+</resources>

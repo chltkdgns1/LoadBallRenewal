@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "386304222344",
+    "project_id": "loadball-a4c8a",
+    "storage_bucket": "loadball-a4c8a.appspot.com",
+    "firebase_url": "https://load-ball-4422682-default-rtdb.firebaseio.com/"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386304222344:android:7b68ca17e1755f578b6b3d",
+        "android_client_info": {
+          "package_name": "com.vicgamestudios.loadball"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "386304222344-8sdt3vbj7v3f0d9ghddhn6kg2u2hpcf8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIOvUQS9E6fDP6OzbbhCbY2ybk3YrgJeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "386304222344-8sdt3vbj7v3f0d9ghddhn6kg2u2hpcf8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

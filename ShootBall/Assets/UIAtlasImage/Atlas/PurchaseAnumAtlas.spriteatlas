@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PurchaseAnumAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 5176e4930a25a1441a514229b5028605, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: e9dce4f074671cf42aa5232c059b97e7, type: 3}
+  - {fileID: 21300000, guid: 902586443c1aa504b8ff71f2f09b7370, type: 3}
+  - {fileID: 21300000, guid: b8440bd4913c226478b030a4cfc8cd16, type: 3}
+  - {fileID: 21300000, guid: 868cb03564c54f74eacba51b8b17b6e6, type: 3}
+  - {fileID: 21300000, guid: ec91f1c5b8b32474cafbeada3e7c8495, type: 3}
+  - {fileID: 21300000, guid: 1933ec87286c92148a1205761d50ff81, type: 3}
+  - {fileID: 21300000, guid: 9d4cc329d4408b54cbf1a1f36f26e732, type: 3}
+  - {fileID: 21300000, guid: e9c81039b9bd902469bc6cceb558b6fa, type: 3}
+  - {fileID: 21300000, guid: 8704baaa706faca4bb550f3e20ee8f33, type: 3}
+  - {fileID: 21300000, guid: 9bd06aeaab3e1974ca107ae975256bad, type: 3}
+  - {fileID: 21300000, guid: b24d460c7f4756541a01fe44491b83f3, type: 3}
+  - {fileID: 21300000, guid: 186fa95c6f80fc44dbb68d01b56b8eff, type: 3}
+  - {fileID: 21300000, guid: 602b4e1d9288d894fa4bfe537b7648b3, type: 3}
+  - {fileID: 21300000, guid: 4f40183f8c3a4fc4eb125fb25c72cf9f, type: 3}
+  - {fileID: 21300000, guid: 01a6ae6f300bbf14b8a28ef683c616fd, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - box_light_01
+  - box_light_02
+  - key_03
+  - box_basic_03
+  - box_basic_02
+  - box_basic_01
+  - box_light_03
+  - box_basic_05
+  - box_basic_04
+  - key_02
+  - key_05
+  - box_light_05
+  - key_01
+  - box_light_04
+  - key_04
+  m_RenderDataMap: {}
+  m_Tag: PurchaseAnumAtlas
+  m_IsVariant: 0

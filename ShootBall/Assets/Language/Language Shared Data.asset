@@ -1,0 +1,240 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Language Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Language
+  m_TableCollectionNameGuidString: e28ca834fd6865c45a1bbce61e5d5707
+  m_Entries:
+  - m_Id: 106817417216
+    m_Key: Store
+    m_Metadata:
+      m_Items: []
+  - m_Id: 202497880064
+    m_Key: Achievements
+    m_Metadata:
+      m_Items: []
+  - m_Id: 451991859200
+    m_Key: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 897347252224
+    m_Key: "Stage\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3644821893120
+    m_Key: BGM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3835025190912
+    m_Key: PlaySound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37295135682560
+    m_Key: Home
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37344385200128
+    m_Key: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37407861796864
+    m_Key: Replay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37524933210112
+    m_Key: Time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37572488228864
+    m_Key: Coin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37615093968896
+    m_Key: Next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37714507362304
+    m_Key: Cancle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37773449916416
+    m_Key: OK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37836817461248
+    m_Key: ReplayAsk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1227822615797760
+    m_Key: StoreNotice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1228550247849984
+    m_Key: EraseAds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1228667587698688
+    m_Key: UnlockStage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1229424273694720
+    m_Key: RemoveAdsBuyGameMoney
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1229849085386752
+    m_Key: RemoveAdsBuyGameMoneyChance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1230243354157056
+    m_Key: RemoveAdsBuyGameMoneyGoldTxt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1231830420070400
+    m_Key: RemoveAdsBuyRealMoneyChance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1232102047391744
+    m_Key: RemoveAdsBuyRealMoneyGoldTxt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1235142930374656
+    m_Key: Remove3Page
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1235172349222912
+    m_Key: Remove4Page
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1235235561578496
+    m_Key: Remove5Page
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1236116763877376
+    m_Key: halfDollar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1236245952634880
+    m_Key: Dollar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1236299501314048
+    m_Key: halfOneDollar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1973020014714880
+    m_Key: logOut
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9928242561327104
+    m_Key: StorePurchaseAlready
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9928356839333888
+    m_Key: StoreDisconnectState
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10058373439053824
+    m_Key: LocalLoginNotice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10268350896447488
+    m_Key: StoreRemoveAdsGoldKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11748374275203072
+    m_Key: StoreCanNotProcess1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11748967811162112
+    m_Key: StoreCanNotProcess2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11748987423727616
+    m_Key: StoreCanNotProcess3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11749367310229504
+    m_Key: StoreCanNotProcess4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11749494255034368
+    m_Key: StoreLackMoney
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17178802599534592
+    m_Key: PendingPurchaseTxt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17183739433754624
+    m_Key: PendingPurchaseFailed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17184486804201472
+    m_Key: PendingPurchaseSuccess
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18257146166419456
+    m_Key: PurchaseDeleteAdsGoldSuccess
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18257847969947648
+    m_Key: PurchaseDeleteAdsGoldFailed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18281760431054848
+    m_Key: PurchaseSuccess
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19717110365839360
+    m_Key: NetworkUnstable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19717142888472576
+    m_Key: AccountConvertOffLine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20426401800560640
+    m_Key: PurchaseFailed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21539889239334912
+    m_Key: OffLineNotice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22784817529249792
+    m_Key: NoticeAppUpdate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22784851347922944
+    m_Key: MatchingPopupReady
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27301946693672960
+    m_Key: ExitGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29519729473134592
+    m_Key: NotLoginGame
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2155410122461413400
+  references:
+    version: 2
+    RefIds:
+    - rid: 2155410122461413400
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1667537861072

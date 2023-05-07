@@ -1,0 +1,260 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Language_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: e28ca834fd6865c45a1bbce61e5d5707, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 106817417216
+    m_Localized: Store
+    m_Metadata:
+      m_Items: []
+  - m_Id: 202497880064
+    m_Localized: Ranking match
+    m_Metadata:
+      m_Items: []
+  - m_Id: 451991859200
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 897347252224
+    m_Localized: Stage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3644821893120
+    m_Localized: BGM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3835025190912
+    m_Localized: PlaySound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37295135682560
+    m_Localized: Home
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37344385200128
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37407861796864
+    m_Localized: Replay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37524933210112
+    m_Localized: Time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37572488228864
+    m_Localized: Coin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37615093968896
+    m_Localized: Next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37714507362304
+    m_Localized: Cancle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37773449916416
+    m_Localized: OK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37836817461248
+    m_Localized: Do you want to restart?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1227822615797760
+    m_Localized: 'Store service is currently being prepared.
+
+      We apologize
+      for any inconvenience.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1228550247849984
+    m_Localized: Remove Ads
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1228667587698688
+    m_Localized: Unlock Stage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1229424273694720
+    m_Localized: <color=#F9D271>Remove Ads</color> <color=#B6A7CB>Key</color>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1229849085386752
+    m_Localized: <color=#90B1FF>1% Chance</color>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1230243354157056
+    m_Localized: 1000 Gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1231830420070400
+    m_Localized: <color=#90B1FF>80% Chance</color>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1232102047391744
+    m_Localized: 0.99 $
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1235142930374656
+    m_Localized: "<color=#F9D271>3 Pages</color>\n <color=#B6A7CB>Unlock Key</color>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1235172349222912
+    m_Localized: "<color=#F9D271>4 Pages</color>\n <color=#B6A7CB>Unlock Key</color>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1235235561578496
+    m_Localized: "<color=#F9D271>5 Pages</color>\n <color=#B6A7CB>Unlock Key</color>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1236116763877376
+    m_Localized: 0.49 $
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1236245952634880
+    m_Localized: 0.99 $
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1236299501314048
+    m_Localized: 1.49 $
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1973020014714880
+    m_Localized: Logout
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9928242561327104
+    m_Localized: This product has already been paid for.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9928356839333888
+    m_Localized: Cannot be used while offline.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10058373439053824
+    m_Localized: 'The game is played with guest login due to network failure and
+      no login.
+
+      Guest login data is not saved when the app is deleted.
+
+      Also,
+      your online account and data are not linked.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10268350896447488
+    m_Localized: 'Spend <color=#F9D271>10000 gold</color>  to remove ads
+
+      Would
+      you like to purchase?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11748374275203072
+    m_Localized: Payment cannot be processed. -1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11748967811162112
+    m_Localized: Payment cannot be processed. -2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11748987423727616
+    m_Localized: Payment cannot be processed. -3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11749367310229504
+    m_Localized: Payment cannot be processed. -4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11749494255034368
+    m_Localized: Gold is low.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17178802599534592
+    m_Localized: Paid product unpaid processing...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17183739433754624
+    m_Localized: 'Unpaid processing failed.
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17184486804201472
+    m_Localized: Payment is complete.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18257146166419456
+    m_Localized: Ads removed successfully!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18257847969947648
+    m_Localized: "\rAd removal failed..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18281760431054848
+    m_Localized: Payment complete!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19717110365839360
+    m_Localized: "\rInternet connection is unstable."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19717142888472576
+    m_Localized: Switch to guest login.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20426401800560640
+    m_Localized: 'The paid product has not been delivered.
+
+      When the game is
+      restarted, the product is paid.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21539889239334912
+    m_Localized: 'The game is not available offline.
+
+      After connecting to the
+      network, please reconnect.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22784851347922944
+    m_Localized: 'The current ranking match is not a period.
+
+      Please start
+      during the ranking period!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22784817529249792
+    m_Localized: 'A new update exists.
+
+      Would you like to receive updates?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27301946693672960
+    m_Localized: Are you sure you want to quit?!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29519729473134592
+    m_Localized: You cannot play the game without logging in.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

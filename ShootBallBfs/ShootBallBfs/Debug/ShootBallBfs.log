@@ -1,0 +1,55 @@
+﻿  main.cpp
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(100,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(133,17): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(134,17): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(151,58): warning C4244: '인수': 'double'에서 'const _Ty'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(206,17): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(207,17): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(243,58): warning C4244: '인수': 'double'에서 'const _Ty'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(284,22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(347,15): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(348,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(375,22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(508,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(599,13): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(865,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(889,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\utility(186,16): warning C4244: '초기화 중': '_Ty'에서 '_Ty1'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=double
+          ]
+          and
+          [
+              _Ty1=int
+          ]
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(466): message : 컴파일되는 함수 템플릿 인스턴스화 'std::pair<int,int>::pair<double,double,0>(_Other1 &&,_Other2 &&) noexcept'에 대한 참조를 확인하세요.
+          with
+          [
+              _Other1=double,
+              _Other2=double
+          ]
+C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\main.cpp(466): message : 컴파일되는 함수 템플릿 인스턴스화 'std::pair<int,int>::pair<double,double,0>(_Other1 &&,_Other2 &&) noexcept'에 대한 참조를 확인하세요.
+          with
+          [
+              _Other1=double,
+              _Other2=double
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\utility(186,54): warning C4244: '초기화 중': '_Ty'에서 '_Ty2'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=double
+          ]
+          and
+          [
+              _Ty2=int
+          ]
+  ShootBallBfs.vcxproj -> C:\Users\chltk\LoadBall\ShootBall\ShootBallBfs\ShootBallBfs\Debug\ShootBallBfs.exe

@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: InGameScene
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 846e9694de8cc8240be82ad1eb33db70, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 6f3526307a7ff624583e2e20e59f4bdb, type: 3}
+  - {fileID: 21300000, guid: e3e7e86081ece16429cf43f9e5ce6be0, type: 3}
+  - {fileID: 21300000, guid: fc893a808a14e5741947044ee717f2ea, type: 3}
+  - {fileID: 21300000, guid: 8b85a9b09a56aa144b2a7df4b4b5db73, type: 3}
+  - {fileID: 21300000, guid: 70d33e316d4eade47b43bbe57a4d485f, type: 3}
+  - {fileID: 21300000, guid: 1bb9c991007f8644196ea7ee60594bed, type: 3}
+  - {fileID: 21300000, guid: dd885bd151131924595febec10d68754, type: 3}
+  - {fileID: 21300000, guid: 97e55be1882faea45a4c7d1657048b2d, type: 3}
+  - {fileID: 21300000, guid: ed7c9b225329fc04a9e1b2baa65c48be, type: 3}
+  - {fileID: 21300000, guid: d1b5a9820f4d84942bd7dbc5afe093ac, type: 3}
+  - {fileID: 21300000, guid: 553b51c2c4c4a7f4fac74fb259ba1d92, type: 3}
+  - {fileID: 21300000, guid: 61744a1311447534bba6c01d3b4249e3, type: 3}
+  - {fileID: 21300000, guid: 7d2b0123eeb8b9e4cb0747b27a8c2181, type: 3}
+  - {fileID: 21300000, guid: 40d27d83b7443a74495f432fc16aada3, type: 3}
+  - {fileID: 21300000, guid: f8f2a3a3cbc539e46a603d4829590c38, type: 3}
+  - {fileID: 21300000, guid: 315feec3bcf5dbd49a04b9869f492b06, type: 3}
+  - {fileID: 21300000, guid: 62f1b11499a1f074fbfb42bb5a0b41b8, type: 3}
+  - {fileID: 21300000, guid: 0e9523f4eeb54aa4fa8bae89857f326b, type: 3}
+  - {fileID: 21300000, guid: a821b1258a8af22479e998464d0e4bc2, type: 3}
+  - {fileID: 21300000, guid: cad00d75ec31c644399d3b5d2c9868cb, type: 3}
+  - {fileID: 21300000, guid: d706c8b58fce598429012c15091ff7e2, type: 3}
+  - {fileID: 21300000, guid: fa37c816e6d7a8540acca48e7d6313bc, type: 3}
+  - {fileID: 21300000, guid: 91262fc7d9cd7fa48b5f5c2a6170848a, type: 3}
+  - {fileID: 21300000, guid: df303c388bacec14d93e5b60c9000bbb, type: 3}
+  - {fileID: 21300000, guid: fdeb3e388af692d43a8680ca075889ab, type: 3}
+  - {fileID: 21300000, guid: 1aabe3c83ec6f4e478ba3296fdbdd2e3, type: 3}
+  - {fileID: 21300000, guid: 2e4ae0297a1a91d4dad786aac6112929, type: 3}
+  - {fileID: 21300000, guid: 5d5727898afdfbd4cb9028e4d5012d44, type: 3}
+  - {fileID: 21300000, guid: f1fdfcf95b31efc488b941a12f559434, type: 3}
+  - {fileID: 21300000, guid: 0ac65b6aa5b59b845bc0ba69b0552f55, type: 3}
+  - {fileID: 21300000, guid: 66ce527afa303ea42a6a96d33567bda9, type: 3}
+  - {fileID: 21300000, guid: 65ebba7a077ba2a46a2e3c5d28dcf2e9, type: 3}
+  - {fileID: 21300000, guid: 1312db8a189c2f541b1acec3d12dc06c, type: 3}
+  - {fileID: 21300000, guid: 39763cda6ceffc44486760802e5932cf, type: 3}
+  - {fileID: 21300000, guid: 660a882ba0d8a6f4bbe487e6755c4d57, type: 3}
+  - {fileID: 21300000, guid: 110b36ac8d82b3c468b50a2a033c3c0e, type: 3}
+  - {fileID: 21300000, guid: 10125fdc834c5cc43a6da3feab7ac7b0, type: 3}
+  - {fileID: 21300000, guid: b8c7144d0005dea4fb840d36f614ff5d, type: 3}
+  - {fileID: 21300000, guid: c73df41efb69f704792162052df65677, type: 3}
+  - {fileID: 21300000, guid: 5425768e69d5af046aa493650f21241f, type: 3}
+  - {fileID: 21300000, guid: 923c63be6da66fa46820a7d0bb465ff7, type: 3}
+  - {fileID: 21300000, guid: e8fdd44fb26b7964aa606814e70528b7, type: 3}
+  - {fileID: 21300000, guid: b8fb6f9f3d188f94791df09c6417df67, type: 3}
+  - {fileID: 21300000, guid: 02b81def912fc4c40a1baffffe4c779c, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - ic_w_stopwatch
+  - btn_line_green_Check
+  - Loading_Rotate_02
+  - Loading_Rotate_12
+  - Slider00_Frame
+  - Loading_Rotate_09
+  - Loading_Rotate_06
+  - Btn_Home_n
+  - btn_line_green_Page Next
+  - Slider00_FillArea
+  - star_gold
+  - Loading_Rotate_03
+  - ImageEffect_01_blue
+  - Loading_Rotate_05
+  - Loading_Rotate_11
+  - coin_02
+  - Btn_Circle_Face_Yellow
+  - Loading_Rotate_10
+  - ic_home
+  - Btn_Restart_n
+  - Popup_00
+  - Btn_Circle_Face_White
+  - Btn_Continue_n
+  - Popup_02
+  - ic_reset
+  - Toggle_Check_White1
+  - Loading_Rotate_08
+  - PageNavi_On
+  - ImageEffect_01_red
+  - ImageEffect_02_yellow
+  - ImageEffect_02_red
+  - Popup_01
+  - ImageEffect_White
+  - ic_w_play
+  - coin_01
+  - Slider00_Fill
+  - ActonText_GameOver
+  - ImageEffect_01_yellow
+  - Loading_Rotate_01
+  - ImageEffect_02_blue
+  - btn_line_red_close
+  - Loading_Rotate_04
+  - Btn_Next
+  - Loading_Rotate_07
+  m_RenderDataMap: {}
+  m_Tag: InGameScene
+  m_IsVariant: 0
