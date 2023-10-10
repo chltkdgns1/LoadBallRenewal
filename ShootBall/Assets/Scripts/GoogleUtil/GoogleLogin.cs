@@ -8,15 +8,13 @@ public class GoogleLogin
 
     GoogleLogin()
     {
-        //PlayGamesClientConfiguration config = new PlayGamesClientConfiguration
+        //GooglePlayGames.BasicApi.PlayGamesClientConfiguration config = new GooglePlayGames.BasicApi.PlayGamesClientConfiguration
         //.Builder()
         //.RequestServerAuthCode(false)
         //.RequestIdToken()
         //.Build();
         ////커스텀 된 정보로 GPGS 초기화
         //PlayGamesPlatform.InitializeInstance(config);
-
-
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
     }
