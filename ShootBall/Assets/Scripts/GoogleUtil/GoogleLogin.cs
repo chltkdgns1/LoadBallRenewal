@@ -32,6 +32,7 @@ public class GoogleLogin
         {
             Social.localUser.Authenticate((bool bSuccess) =>
             {
+                Debug.Log("Social.localUser.Authenticate((bool bSuccess)  : " + bSuccess);
                 if (bSuccess == false)
                 {
 #if UNITY_EDITOR

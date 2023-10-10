@@ -118,6 +118,11 @@ public class GoogleIAP : MonoBehaviour, IStoreListener
         Debug.Log("구글 구매 OnInitialized finish");
     }
 
+    public void OnInitializeFailed(InitializationFailureReason error, string message)
+    {
+        Debug.Log("초기화 실패 : " + message);
+    }
+
     public void OnInitializeFailed(InitializationFailureReason error)
     {
         Debug.Log("초기화 실패 : " + error);
