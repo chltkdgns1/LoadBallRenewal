@@ -307,9 +307,9 @@ public class Reporter : MonoBehaviour
         SceneManager.sceneLoaded += _OnLevelWasLoaded;
 #endif
 
-#if REAL
-		Destroy(gameObject);
-#endif
+//#if REAL
+//		Destroy(gameObject);
+//#endif
 
 	}
 

@@ -161,13 +161,39 @@ public class PopupStack : MonoBehaviour, IPopupStackInfo
     // 뒤로 가기에 의해서 작동하는 경우
     static public bool RemoveBack()
     {
-        if (popupStack.Count == 0) return false;
+        if (popupStack.Count == 0) 
+            return false;
 
         GameObject ob = popupStack.Pop();
+
+        if (ob == null)
+        {
+            RefreshStack();
+            return RemoveBack();
+        }
+
         RemoveDicData(ob);
         ob.GetComponent<PopupStack>()?.RemovePopupAct();
         return true;
     }
+
+    static void RefreshStack()
+    {
+        List<GameObject> popList = new List<GameObject>();
+
+        while(popupStack.Count != 0)
+        {
+            var ob = popupStack.Pop();
+            if (ob != null)
+                popList.Add(ob);
+        }
+
+        for(int i = popList.Count -1; i >=0; i--)
+        {
+            popupStack.Push(popList[i]);
+        }
+    }
+
     static void AddDicData(GameObject ob)
     {
         _dic.Add(ob, true);

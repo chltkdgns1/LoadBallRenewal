@@ -17,15 +17,7 @@ public class AppInput : MonoBehaviour
 
     void Update()
     {
-        InputBack();
-    }
-
-    void InputBack()
-    {
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            CheckKeyDown();
-        }
+        CheckKeyDown();
     }
 
     void CheckKeyDown()
