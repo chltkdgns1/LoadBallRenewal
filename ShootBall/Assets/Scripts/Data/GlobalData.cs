@@ -466,5 +466,10 @@ public class GlobalData
         Cash = 0;
         UnLockPage = 2;
     }
+
+    static public bool IsCanBuyProduct()
+    {
+        return GlobalData.IsConnectNetWork && GlobalData.IsGoogleLogin;
+    }
 }
 

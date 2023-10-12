@@ -25,9 +25,6 @@ public class GoogleIAPCallBackManager
         productCompleteDic.Clear();
         List<ProductData> prData = GoogleIAPProductConverter.productData;
         AddPurchaseEvent(prData[0].productId, OnCompletePurchaseDeleteAds);
-        AddPurchaseEvent(prData[1].productId, OnCompletePurchaseUnLockPageThree);
-        AddPurchaseEvent(prData[2].productId, OnCompletePurchaseUnLockPageFour);
-        AddPurchaseEvent(prData[3].productId, OnCompletePurchaseUnLockPageFive);
     }
 
     static public bool ContainProductId(string productId)
@@ -77,29 +74,10 @@ public class GoogleIAPCallBackManager
         return false;
     }
 
-    void OnCompletePurchaseItem(bool isSuccess)
-    {
-        if (isSuccess)
-        {
-            Debug.Log("결제 성공");
-        }
-        else
-        {
-            Debug.Log("결제 실패");
-        }
-
-        GoogleIAP.purchaseProductId = null;
-    }
-
     static public void FinishPurchase(bool result = true)
     {
         GoogleIAP.purchaseProductId = null;
         LobbySceneManager.instance?.RefreshStorePopupMenu();
-
-        if (result == false)
-        {
-            Popup<NoticePopup>.ShowPopup(PopupPath.PopupNotice, StringList.LanguageTable, StringList.PurchaseFailed);
-        }
     }
 
     void OnCompletePurchaseDeleteAds(bool isSuccess)
@@ -111,50 +89,8 @@ public class GoogleIAPCallBackManager
         }
         else
         {
-            PurchaseResultManager.ResultPurchaseProduct(ProductTypes.DeleteAdsGoogle, 1);
+            ProductResultManager.ResultPurchaseProduct(ProductTypes.DELETE_CASH_ADS);
             Debug.Log("Success Purchase 'Delete Ads'");
-        }
-    }
-
-    void OnCompletePurchaseUnLockPageThree(bool isSuccess)
-    {
-        if (isSuccess == false)
-        {
-            Debug.Log("결제 실패 " + KeyNumber.three);
-            FinishPurchase(false);
-        }
-        else
-        {
-            PurchaseResultManager.ResultPurchaseProduct(ProductTypes.UnLockStageThree, 1);
-            Debug.Log("Success Purchase 'UnLockPage'");
-        }
-    }
-
-    void OnCompletePurchaseUnLockPageFour(bool isSuccess)
-    {
-        if (isSuccess == false)
-        {
-            Debug.Log("결제 실패 " + KeyNumber.four);
-            FinishPurchase(false);
-        }
-        else
-        {
-            PurchaseResultManager.ResultPurchaseProduct(ProductTypes.UnLockStageFour, 1);
-            Debug.Log("Success Purchase 'UnLockPage'");
-        }
-    }
-
-    void OnCompletePurchaseUnLockPageFive(bool isSuccess)
-    {
-        if (isSuccess == false)
-        {
-            Debug.Log("결제 실패 " + KeyNumber.five);
-            FinishPurchase(false);
-        }
-        else
-        {
-            PurchaseResultManager.ResultPurchaseProduct(ProductTypes.UnLockStageFive, 1);
-            Debug.Log("Success Purchase 'UnLockPage'");
         }
     }
 }

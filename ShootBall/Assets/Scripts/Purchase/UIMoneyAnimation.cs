@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PurchaseMoneyAnimation : MonoBehaviour, IComplete
+public class UIMoneyAnimation : MonoBehaviour, IComplete
 {
     [SerializeField]
     Text nomalCoinTxt;

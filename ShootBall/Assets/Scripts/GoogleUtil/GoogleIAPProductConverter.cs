@@ -4,13 +4,8 @@ using UnityEngine;
 
 public enum ProductTypes
 {
-    DeleteAdsGoogle,
-    UnLockStageThree,
-    UnLockStageFour,
-    UnLockStageFive,
-
-    // 구글 상품이 아님
-    NonGoolgeProduct_DeleteAds, // 해당 enum type 은 제일 하단에 위치함. 구글 상품이 아님
+    DELETE_CASH_ADS,
+    DELETE_GOLD_ADS
 }
 
 public class ProductData
@@ -27,8 +22,8 @@ public class ProductData
 
 public class GoogleIAPProductConverter
 {
-    static readonly string[] productId = { "delads", "keythree", "keyfour", "keyfive" };
-    static readonly string[] productName = { "delads", "keythree", "keyfour", "keyfive" };
+    static readonly string[] productId = { "addeleteproduct"};
+    static readonly string[] productName = { "광고 제거"};
 
     static public List<ProductData> productData = new List<ProductData>();
     static GoogleIAPProductConverter instance = new GoogleIAPProductConverter();
@@ -42,23 +37,8 @@ public class GoogleIAPProductConverter
         }
     }
 
-    static public string ConvertTypeToId(ProductTypes type)
+    static public string GetProductId(int index)
     {
-        int typeIndex = (int)type;
-        if (productId.Length <= typeIndex)
-        {
-            return GetNonGoogleId(type);
-        }
-        return productId[typeIndex];
-    }
-
-    static string GetNonGoogleId(ProductTypes type)
-    {
-        switch (type)
-        {
-            case ProductTypes.NonGoolgeProduct_DeleteAds:
-                return "NonGoolgeProduct_DeleteAds";
-        }
-        return null;
+        return productId[index];
     }
 }

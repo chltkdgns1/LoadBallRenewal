@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Purchasing;
 
-public class PurchaseEvent
+public class ProductPurchaseEvent
 {
     public Product product;
     public Action<bool> complete;
     public Action<Product, Action<bool>> act;
 
-    public PurchaseEvent(Product product, Action<bool> complete, Action<Product, Action<bool>> act)
+    public ProductPurchaseEvent(Product product, Action<bool> complete, Action<Product, Action<bool>> act)
     {
         this.product = product;
         this.complete = complete;
@@ -18,18 +18,27 @@ public class PurchaseEvent
     }
 }
 
-public class PurchaseEventSystem : MonoBehaviour
+public class ProductPurchaseEventSystem : MonoBehaviour
 {
-    public static PurchaseEventSystem instance = null;
-    static Queue<PurchaseEvent> eventQueue = new Queue<PurchaseEvent>();
+    public static ProductPurchaseEventSystem instance = null;
+    static Queue<ProductPurchaseEvent> eventQueue = new Queue<ProductPurchaseEvent>();
 
     [Serializable]
     class ProductData
     {
         public GameObject productPrefabs;
-        public ProductTypes productType;
-        public GameObject productOb { get; set; }
-        public string productId { get; set; }
+        public UIPendingProduct uiPendingProduct { get; set; }
+
+        public void Init(Transform parent)
+        {
+            var ob = Instantiate(productPrefabs, parent);
+            uiPendingProduct = ob.GetComponent<UIPendingProduct>();
+        }
+
+        public void SetActive(bool isFlag)
+        {
+            uiPendingProduct.gameObject.SetActive(isFlag);
+        }
     }
 
     [SerializeField]
@@ -42,7 +51,8 @@ public class PurchaseEventSystem : MonoBehaviour
 
     public void Awake()
     {
-        if (instance == null) instance = this;
+        if (instance == null) 
+            instance = this;
         else
         {
             enabled = false;
@@ -59,9 +69,7 @@ public class PurchaseEventSystem : MonoBehaviour
 
         for (int i = 0; i < productData.Length; i++)
         {
-            productData[i].productOb = Instantiate(productData[i].productPrefabs, purchasePopupTrans);
-            productData[i].productOb.SetActive(false);
-            productData[i].productId = GoogleIAPProductConverter.ConvertTypeToId(productData[i].productType);
+            productData[i].Init(purchasePopupTrans);
         }
     }
 
@@ -81,14 +89,15 @@ public class PurchaseEventSystem : MonoBehaviour
             return;
         }
 
-        purchasePopupTrans.gameObject.SetActive(false);
         for (int i = 0; i < productData.Length; i++)
         {
-            productData[i].productOb.SetActive(false);
+            productData[i].SetActive(false);
         }
+
+        purchasePopupTrans.gameObject.SetActive(false);
     }
 
-    static public void AddPurchaseEvent(PurchaseEvent evt)
+    static public void AddPurchaseEvent(ProductPurchaseEvent evt)
     {
         eventQueue.Enqueue(evt);
     }
@@ -114,18 +123,18 @@ public class PurchaseEventSystem : MonoBehaviour
 
         for (int i = 0; i < productData.Length; i++)
         {
-            productData[i].productOb.SetActive(false);
+            productData[i].SetActive(false);
         }
 
-        productData[index].productOb.SetActive(true);
+        productData[index].SetActive(true);
     }
 
-    void ExcutePurchaseEvent(PurchaseEvent evt)
+    void ExcutePurchaseEvent(ProductPurchaseEvent evt)
     {
         purchasePopupTrans.gameObject.SetActive(true);
         for (int i = 0; i < productData.Length; i++)
         {
-            if (productData[i].productId == evt.product.definition.id)
+            if (productData[i].uiPendingProduct.GetProductId() == evt.product.definition.id)
             {
                 Debug.LogWarning("미결제 상품 결제 시작");
                 PrintIndex(i);
@@ -140,7 +149,7 @@ public class PurchaseEventSystem : MonoBehaviour
         // 미결제된 안내 상품을 출력함..
     }
 
-    IEnumerator WaitAction(PurchaseEvent evt)
+    IEnumerator WaitAction(ProductPurchaseEvent evt)
     {
         yield return new WaitForSeconds(3f);
         evt.act(evt.product, evt.complete);
@@ -153,25 +162,8 @@ public class PurchaseEventSystem : MonoBehaviour
 
     public void FinishProcessstate(bool isSuccess) // 타입을 맞춰주기 위한 변수임..
     {
-        // 미결제 상품 프로세스 종료
-
         Debug.LogWarning("미결제 상품 프로세스 종료");
-
-        if (isSuccess == false)
-        {
-            ThreadEvent.AddThreadEvent(() =>
-            {
-                IsProcessState = false;
-                purchasePopupTrans.gameObject.SetActive(false);
-            });
-        }
-        else
-        {
-            ThreadEvent.AddThreadEvent(() =>
-            {
-                IsProcessState = false;
-                purchasePopupTrans.gameObject.SetActive(false);
-            });
-        }
+        IsProcessState = false;
+        purchasePopupTrans.gameObject.SetActive(false);
     }
 }
