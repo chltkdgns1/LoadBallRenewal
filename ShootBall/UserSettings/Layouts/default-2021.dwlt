@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Console
   m_RootView: {fileID: 11}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 78
+  controlID: 85
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 123
+  controlID: 145
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 151
+  controlID: 61
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 77
+  controlID: 84
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -451,21 +451,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\chltkdgnsska\Desktop\LoadBallRenewal\ShootBall\ShootBall
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 64700000
-    m_LastClickedID: 28772
+    m_SelectedIDs: 96700000
+    m_LastClickedID: 28822
     m_ExpandedIDs: 000000006470000066700000687000006a7000006c7000006e70000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -624,7 +624,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 92cbffffead2ffffdedcffff0ee5ffff6ae5ffffdae5ffff66ecffffb2ecffffe8eeffff78efffff90efffffe6efffffc0f2ffff0af3ffff48f3ffff9af3ffffb2f3ffffecf5ffff38f6ffff6ef8fffffef8ffff16f9ffff32fbfffff4ffffff
+      m_ExpandedIDs: bed5ffff08d6ffff46d6ffff98d6ffffb0d6ffffbad8ffff06d9ffff3cdbffffccdbffffe4dbffff36ebffff94eeffff3cf6ffffc6f8ffff8ef9ffffeaf9ffff32fbffff4474000042790000fc850000fa88000050900000dec30000aec40000dcc80000aad2000096d500009ede00009ce3000056f00000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

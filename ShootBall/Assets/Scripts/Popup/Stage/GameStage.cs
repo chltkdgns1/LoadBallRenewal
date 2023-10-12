@@ -94,11 +94,11 @@ public class GameStage : MonoBehaviour
                 if (GlobalData.StageGroupPro.stageDataList[index].state.value == (long)StageState.NOT_CLEAR)
                     return;
 
-                int pageStageEnd = GlobalData.UnLockPage * GlobalData.PageStageSize;
-
-                int clickStageNum = index + 1;
-                if (pageStageEnd < clickStageNum)
-                    return;
+                // 페이지 잠금 영역 주석 처리
+                //int pageStageEnd = GlobalData.UnLockPage * GlobalData.PageStageSize;
+                //int clickStageNum = index + 1;
+                //if (pageStageEnd < clickStageNum)
+                //    return;
 
                 PlayingGameManager.gameLevel = index + 1;
                 LoadSceneManager.instance.LoadScene(StringList.InGameScene);

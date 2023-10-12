@@ -13,10 +13,11 @@ public class GameStageElements : MonoBehaviour
         int unlockPage = GlobalData.UnLockPage; // unlockPage 는 1부터 시작함.
         int nowPage = page + 1;
 
-        if (nowPage <= unlockPage)
-            gameLevelPopupLockStage.SetActive(false);
-        else
-            gameLevelPopupLockStage.SetActive(true);
+        // 페이지 잠금 영역 주석 처리
+        //if (nowPage <= unlockPage)
+        //    gameLevelPopupLockStage.SetActive(false);
+        //else
+        //    gameLevelPopupLockStage.SetActive(true);
     }
 
     public void SetActiveLock(bool isActive)
