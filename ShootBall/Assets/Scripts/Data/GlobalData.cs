@@ -1,3 +1,4 @@
+using LitJson;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -263,7 +264,6 @@ public class GlobalDataConnector
     public void SetFromDic(Dictionary<string, object> value)
     {
         coin = UtilManager.GetLongValueDic(value, StringList.FirebaseCoin);
-        Debug.Log("ÄÚÀÎ : " + coin);
         unLockPage = UtilManager.GetIntValueDic(value, StringList.FirebaseUnLockPage);
         IsDeleteAds = UtilManager.GetBoolValueDic(value, StringList.FirebaseDeleteAds);
         stageGroup.SetFromDic((Dictionary<string, object>)value[StringList.FirebaseStageGroup]);
@@ -300,6 +300,16 @@ public class GlobalDataConnector
     }
 }
 
+public class ProductItemData
+{
+    public string productId;
+    public string imgPath;
+    public string content1;
+    public string content2;
+    public long price;
+    public bool IsCash;
+}
+
 public class GlobalData
 {
     private static EncryNumber stageSize = new EncryNumber(90);
@@ -322,6 +332,8 @@ public class GlobalData
     static private EncryString uid = new EncryString("000000000");
 
     static private EncryBool isOpenRankingChallenge = new EncryBool(false);
+
+    static private List<ProductItemData> productItemDataList = new List<ProductItemData>();
 
     public class Sound
     {
@@ -358,6 +370,8 @@ public class GlobalData
 
     static public Sound soundSettings = null;
 
+    static public int repeatCnt = 3;
+
     static GlobalData()
     {
         appVerison.value = Application.version;
@@ -365,6 +379,52 @@ public class GlobalData
 
         TimeData timeData = new TimeData();
         timeDataEncry = timeData.GetTimeDataEncry();
+
+        GetItemList();
+    }
+
+    static public void GetItemList()
+    {
+        GoogleFirebaseManager.ReadSimpleData(StringList.FirebaseItemList, (result, itemList) =>
+        {
+            if (result == QueryAns.SUCCESS)
+            {
+                productItemDataList.Clear();
+
+                try
+                {
+                    var list = (List<object>)itemList;
+                    foreach (Dictionary<string, object> item in list)
+                    {
+                        var itemData = new ProductItemData();
+                        itemData.productId = item["productId"].ToString();
+                        itemData.imgPath = item["imgPath"].ToString();
+                        itemData.content1 = item["content1"].ToString();
+                        itemData.content2 = item["content2"].ToString();
+                        itemData.price = long.Parse(item["price"].ToString());
+                        itemData.IsCash = bool.Parse(item["isCash"].ToString());
+                        productItemDataList.Add(itemData);
+                    }
+                }
+                catch(Exception e)
+                {
+                    Debug.LogError(e);
+                }
+            }
+            else
+            {
+                if(repeatCnt <= 0)
+                {
+                    ThreadEvent.AddThreadEvent(() =>
+                    {
+                        UtilManager.Quit();
+                    });
+                    return;
+                }
+                repeatCnt--;
+                GetItemList();
+            }
+        });
     }
 
     static public int StageSize

@@ -31,6 +31,7 @@ public static class StringList
     public const string FirebaseStoreDeleteAdsPath = "purchaseList/deleteAdsKey";
     public const string FirebaseAppVersion = "AppVersion";
     public const string FirebaseGoogleAppURL = "GoogleAppURL";
+    public const string FirebaseItemList = "ItemList";
 
     // gameobject name
     public const string StageLockBack = "StageLockBack";

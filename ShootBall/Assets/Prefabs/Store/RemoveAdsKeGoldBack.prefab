@@ -171,8 +171,8 @@ MonoBehaviour:
   targetOject: {fileID: 1991945855361571055}
   size: 0.8
   duration: 0.5
-  compStr: PurchaseInAppGame
-  methodStr: OnClickProduct
+  compStr: 
+  methodStr: 
   IsUseClickedOption: 1
   enableSprite: {fileID: 0}
   unenableSprite: {fileID: 0}
@@ -189,8 +189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productType: 4
+  productIdIndex: 0
   iapState: 0
-  purchaseSuccessData: deleteAdsKey,1,gold,10000
 --- !u!1 &1991945855408168503
 GameObject:
   m_ObjectHideFlags: 0
