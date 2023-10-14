@@ -4,20 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-public class ProductInfo
-{
-
-}
-
 public class UIProduct : MonoBehaviour
 {
-    string[] languageTablesNotice =
-    {
-            StringList.StoreDisconnectState, 
-            StringList.StoreNotice
-    };
-
     [SerializeField]
     protected ProductTypes productType;
 
@@ -34,9 +22,32 @@ public class UIProduct : MonoBehaviour
     [SerializeField]
     protected IAPState iapState = IAPState.CASH;
 
-    public void SetData(ProductInfo info)
-    {
+    [SerializeField] Text content1;
+    [SerializeField] Text content2;
+    [SerializeField] Text price;
+    [SerializeField] Image itemImg;
 
+    [SerializeField] GameObject gold;
+    [SerializeField] GameObject cash;
+
+    public void SetData(ProductItemData info)
+    {
+        content1.text = info.content1;
+        content2.text = info.content2;
+        price.text = info.price.ToString();
+
+        itemImg.sprite = SpriteAtalsManager.instance.GetSprite("LobbyAtlas", info.imgPath);
+
+        if (info.IsCash)
+        {
+            gold.SetActive(false);
+            cash.SetActive(true);
+        }
+        else
+        {
+            gold.SetActive(true);
+            cash.SetActive(false);
+        }
     }
 
     public virtual void OnClickProduct()

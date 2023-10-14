@@ -21,10 +21,10 @@ public partial class LobbySceneManager
 
     #region ½ºÅä¾î ÆË¾÷
     [SerializeField]
-    StorePopup storePopup;
+    PopupStore storePopup;
     #endregion
 
-    public StorePopup StorePopupProperty
+    public PopupStore StorePopupProperty
     {
         get { return storePopup; }
     }

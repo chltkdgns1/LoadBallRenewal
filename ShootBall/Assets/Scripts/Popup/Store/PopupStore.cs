@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StorePopup : PopupStack
+public class PopupStore : PopupStack
 {
     [SerializeField]
     UIMoneyAnimation moneyTxt;
@@ -27,11 +27,11 @@ public class StorePopup : PopupStack
         OnMenu(0);
     }
 
-    void SetData()
+    public void SetData(List<List<ProductItemData>> productItemDataList)
     {
         for(int i = 0; i < storeMenu.Length; i++)
         {
-            storeMenu[i].SetData(null);
+            storeMenu[i].SetData(productItemDataList[i], OnMenu);
         }
     }
 
@@ -63,9 +63,9 @@ public class StorePopup : PopupStack
         }
     }
 
-    public void Refresh()
+    public void Refresh(List<List<ProductItemData>> productItemDataList)
     {
-        SetData();
+        SetData(productItemDataList);
     }
 }
 

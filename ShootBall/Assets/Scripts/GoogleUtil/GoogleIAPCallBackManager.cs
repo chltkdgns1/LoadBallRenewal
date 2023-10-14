@@ -77,7 +77,7 @@ public class GoogleIAPCallBackManager
     static public void FinishPurchase(bool result = true)
     {
         GoogleIAP.purchaseProductId = null;
-        LobbySceneManager.instance?.RefreshStorePopupMenu();
+        LobbySceneManager.instance?.RefreshStorePopupMenu(GlobalData.productItemDataList);
     }
 
     void OnCompletePurchaseDeleteAds(bool isSuccess)

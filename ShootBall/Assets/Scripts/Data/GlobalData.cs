@@ -333,7 +333,7 @@ public class GlobalData
 
     static private EncryBool isOpenRankingChallenge = new EncryBool(false);
 
-    static private List<ProductItemData> productItemDataList = new List<ProductItemData>();
+    static public List<List<ProductItemData>> productItemDataList = new List<List<ProductItemData>>();
 
     public class Sound
     {
@@ -385,7 +385,7 @@ public class GlobalData
 
     static public void GetItemList()
     {
-        GoogleFirebaseManager.ReadSimpleData(StringList.FirebaseItemList, (result, itemList) =>
+        GoogleFirebaseManager.ReadSimpleData(StringList.FirebaseItemList, (result, info) =>
         {
             if (result == QueryAns.SUCCESS)
             {
@@ -393,17 +393,23 @@ public class GlobalData
 
                 try
                 {
-                    var list = (List<object>)itemList;
-                    foreach (Dictionary<string, object> item in list)
+                    var infoList = (List<object>)info;
+
+                    foreach (Dictionary<string, object> items in infoList)
                     {
-                        var itemData = new ProductItemData();
-                        itemData.productId = item["productId"].ToString();
-                        itemData.imgPath = item["imgPath"].ToString();
-                        itemData.content1 = item["content1"].ToString();
-                        itemData.content2 = item["content2"].ToString();
-                        itemData.price = long.Parse(item["price"].ToString());
-                        itemData.IsCash = bool.Parse(item["isCash"].ToString());
-                        productItemDataList.Add(itemData);
+                        var itemList = new List<ProductItemData>();
+                        foreach(Dictionary<string, object> item in items.Values)
+                        {
+                            var itemData = new ProductItemData();
+                            itemData.productId = item["productId"].ToString();
+                            itemData.imgPath = item["imgPath"].ToString();
+                            itemData.content1 = item["content1"].ToString();
+                            itemData.content2 = item["content2"].ToString();
+                            itemData.price = long.Parse(item["price"].ToString());
+                            itemData.IsCash = bool.Parse(item["isCash"].ToString());
+                            itemList.Add(itemData);
+                        }
+                        productItemDataList.Add(itemList);
                     }
                 }
                 catch(Exception e)

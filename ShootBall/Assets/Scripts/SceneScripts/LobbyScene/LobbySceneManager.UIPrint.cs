@@ -106,6 +106,7 @@ public partial class LobbySceneManager
             return;
         }
 
+        storePopup.SetData(GlobalData.productItemDataList);
         storePopup.gameObject.SetActive(true);
     }
 

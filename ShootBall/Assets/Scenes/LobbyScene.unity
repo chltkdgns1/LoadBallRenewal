@@ -2189,15 +2189,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AddObject: {fileID: 0}
-  RemoveObject: {fileID: 1341846194}
+  RemoveObject: {fileID: 0}
   compStrAdd: null
   methodStrAdd: null
-  compStrRemove: LobbySceneManager
-  methodStrRemove: SetEraseStorePopup
-  UseExitEvent: 1
+  compStrRemove: null
+  methodStrRemove: null
+  UseExitEvent: 0
   moneyTxt: {fileID: 371824006}
   moneyFrame: {fileID: 371824005}
-  storeMenu: []
+  storeMenu:
+  - {fileID: 1037673571}
 --- !u!114 &98293676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33136,7 +33137,7 @@ MonoBehaviour:
   pressColor: {r: 0.42745098, g: 0.59607846, b: 1, a: 0}
   imgLine: {fileID: 1882279329}
   txt: {fileID: 826520595}
-  productPrefab: {fileID: 0}
+  productPrefab: {fileID: 1991945855361571055, guid: 51ba1f3b18dab46419c02ee1b7b1e618, type: 3}
 --- !u!114 &1037673572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33180,7 +33181,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1037673570}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1037673571}
+        m_TargetAssemblyTypeName: UIStoreMenu, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1043015629
 GameObject:
   m_ObjectHideFlags: 0
@@ -37366,7 +37379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1188766912
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43247,13 +43260,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productData:
   - productPrefabs: {fileID: 2834602074282443311, guid: b968617125fb80c4796c0cfa2633e69f, type: 3}
-    productType: 0
   - productPrefabs: {fileID: 2834602074282443311, guid: c4b2c322d04618a47bdc8e98f53d6027, type: 3}
-    productType: 1
   - productPrefabs: {fileID: 2834602074282443311, guid: 0e41f48a31c032042b21a16c9e07560e, type: 3}
-    productType: 2
   - productPrefabs: {fileID: 2834602074282443311, guid: 81b1a578fdfe9a0419df957998c3c1fd, type: 3}
-    productType: 3
   purchasePopupTrans: {fileID: 636220813}
 --- !u!114 &1341846210
 MonoBehaviour:

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Collections.Generic;
 using UnityEngine;
 
 public partial class LobbySceneManager : MonoBehaviour
@@ -30,14 +31,14 @@ public partial class LobbySceneManager : MonoBehaviour
         SetPrintSettingBack();
     }
 
-    public void RefreshStorePopupMenu()
+    public void RefreshStorePopupMenu(List<List<ProductItemData>> productItemDataList)
     {
         if (storePopup == null || storePopup.gameObject || storePopup.gameObject.activeSelf == false)
         {
             return;
         }
 
-        storePopup.Refresh();
+        storePopup.Refresh(productItemDataList);
     }
 
 #if UNITY_EDITOR

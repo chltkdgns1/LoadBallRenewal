@@ -21,14 +21,16 @@ public class UIStoreMenu : MonoBehaviour
     [SerializeField]
     GameObject productPrefab;
 
-    public void SetData(List<ProductInfo> infoList)
+    public void SetData(List<ProductItemData> productItemDataList, Action<int> act)
     {
-        for(int i = 0; i < infoList.Count; i++)
+        for(int i = 0; i < productItemDataList.Count; i++)
         {
             var uiProduct = Instantiate(productPrefab, transform).GetComponent<UIProduct>();
-            uiProduct.SetData(infoList[i]);
+            uiProduct.SetData(productItemDataList[i]);
             productList.Add(uiProduct);
         }
+
+        this.act = act;
     }
 
     public void OnClick()
