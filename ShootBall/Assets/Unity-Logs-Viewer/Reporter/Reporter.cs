@@ -308,12 +308,12 @@ public class Reporter : MonoBehaviour
 #endif
 
 //#if REAL
-//		Destroy(gameObject);
+//		gameObject.SetActive(false);
 //#endif
 
-	}
+    }
 
-	private void OnDestroy()
+    private void OnDestroy()
     {
 #if UNITY_CHANGE3
         SceneManager.sceneLoaded -= _OnLevelWasLoaded;

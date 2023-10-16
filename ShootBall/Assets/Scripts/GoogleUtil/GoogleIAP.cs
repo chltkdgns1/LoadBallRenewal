@@ -51,19 +51,7 @@ public class GoogleIAP : MonoBehaviour, IStoreListener
         purchaseProductId = null;
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
 
-        if(builder == null)
-        {
-            BackEndLogger.Log("Error", BackEndLogger.LogType.ERROR, "GoogleIAP Init builder == null");
-            return;
-        }
-
         List<ProductData> prData = GoogleIAPProductConverter.productData;
-
-        if (prData == null)
-        {
-            BackEndLogger.Log("Error", BackEndLogger.LogType.ERROR, "GoogleIAP Init prData == null");
-            return;
-        }
 
         for (int i = 0; i < prData.Count; i++)
         {
@@ -92,12 +80,6 @@ public class GoogleIAP : MonoBehaviour, IStoreListener
         m_ExtensionProvider = extensions;
 
         List<ProductData> prData = GoogleIAPProductConverter.productData;
-
-        if (prData == null)
-        {
-            BackEndLogger.Log("Error", BackEndLogger.LogType.ERROR, "GoogleIAP OnInitialized prData == null");
-            return;
-        }
 
         for (int i = 0; i < prData.Count; i++)
         {
@@ -152,21 +134,22 @@ public class GoogleIAP : MonoBehaviour, IStoreListener
 
 #if UNITY_EDITOR
         GoogleIAPCallBackManager.GetComplete(args.purchasedProduct.definition.id)?.Invoke(true);
-        return PurchaseProcessingResult.Pending;
+        return PurchaseProcessingResult.Complete;
 #else
-            if (GoogleIAPCallBackManager.IsRegisteredProduct(args.purchasedProduct.definition.id) == false)
-            {
-                return PurchaseProcessingResult.Pending;
-            }
-
-            if (purchaseProductId == null)
-            {
-                PurchaseEventSystem.AddPurchaseEvent(new PurchaseEvent(args.purchasedProduct, GoogleIAPCallBackManager.GetComplete(args.purchasedProduct.definition.id), RequestVerifyReceipt));
-                return PurchaseProcessingResult.Pending;
-            }
-
-            RequestVerifyReceipt(args.purchasedProduct, GoogleIAPCallBackManager.GetComplete(args.purchasedProduct.definition.id));
+        if (GoogleIAPCallBackManager.IsRegisteredProduct(args.purchasedProduct.definition.id) == false)
+        {
             return PurchaseProcessingResult.Pending;
+        }
+
+        if (purchaseProductId == null)
+        {
+            purchaseProductId = args.purchasedProduct.definition.id;
+            ProductPurchaseEventSystem.AddPurchaseEvent(new ProductPurchaseEvent(args.purchasedProduct, GoogleIAPCallBackManager.GetComplete(args.purchasedProduct.definition.id), RequestVerifyReceipt));
+            return PurchaseProcessingResult.Pending;
+        }
+
+        RequestVerifyReceipt(args.purchasedProduct, GoogleIAPCallBackManager.GetComplete(args.purchasedProduct.definition.id));
+        return PurchaseProcessingResult.Pending;
 #endif
     }
 

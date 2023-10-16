@@ -93,8 +93,8 @@ MonoBehaviour:
   targetOject: {fileID: 0}
   size: 0.8
   duration: 0.5
-  compStr: DebugConsole
-  methodStr: OnPrint
+  compStr: null
+  methodStr: null
   IsUseClickedOption: 1
   enableSprite: {fileID: 0}
   unenableSprite: {fileID: 0}

@@ -395,10 +395,10 @@ public class GlobalData
                 {
                     var infoList = (List<object>)info;
 
-                    foreach (Dictionary<string, object> items in infoList)
+                    foreach (List<object> items in infoList)
                     {
                         var itemList = new List<ProductItemData>();
-                        foreach(Dictionary<string, object> item in items.Values)
+                        foreach(Dictionary<string, object> item in items)
                         {
                             var itemData = new ProductItemData();
                             itemData.productId = item["productId"].ToString();
@@ -536,6 +536,21 @@ public class GlobalData
     static public bool IsCanBuyProduct()
     {
         return GlobalData.IsConnectNetWork && GlobalData.IsGoogleLogin;
+    }
+
+    static public ProductItemData GetProductInfo(string productId)
+    {
+        for(int i = 0; i < productItemDataList.Count; i++)
+        {
+            foreach(var info in productItemDataList[i])
+            {
+                if (info.productId.Equals(productId))
+                {
+                    return info;
+                }
+            }
+        }
+        return null;
     }
 }
 

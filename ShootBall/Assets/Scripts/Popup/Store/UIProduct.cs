@@ -6,11 +6,7 @@ using UnityEngine.UI;
 
 public class UIProduct : MonoBehaviour
 {
-    [SerializeField]
-    protected ProductTypes productType;
-
-    [SerializeField]
-    int productIdIndex;
+    ProductItemData productItemData;
 
     public enum IAPState
     {
@@ -32,9 +28,13 @@ public class UIProduct : MonoBehaviour
 
     public void SetData(ProductItemData info)
     {
+        productItemData = info;
+
         content1.text = info.content1;
-        content2.text = info.content2;
-        price.text = info.price.ToString();
+        content2.text = info.content2.Replace("\\n", "\n");
+        price.text = info.price.ToString() + " ¿ø";
+
+        //content2.text = content2.text.Replace("\\n", "\n");
 
         itemImg.sprite = SpriteAtalsManager.instance.GetSprite("LobbyAtlas", info.imgPath);
 
@@ -42,31 +42,40 @@ public class UIProduct : MonoBehaviour
         {
             gold.SetActive(false);
             cash.SetActive(true);
+            iapState = IAPState.CASH;
         }
         else
         {
             gold.SetActive(true);
             cash.SetActive(false);
+            iapState = IAPState.INGAME_GOLD;
         }
     }
 
     public virtual void OnClickProduct()
     {
+        var pId = GetProductId();
         switch (iapState)
         {
             case IAPState.READY_PRODUCTION:
-                SetClickProduct(StringList.StorePurchaseAlready);
+                SetClickProduct(StringList.StoreReadyProduct);
                 return;
             case IAPState.INGAME_GOLD:
                 if (GlobalData.IsCanBuyProduct())
                 {
-                    GoogleIAP.PurchaseProduct(GetProductId());
+                    if (IsCanBuyProduct(pId))
+                        GoogleIAP.PurchaseProduct(pId);
+                    else
+                        SetClickProduct(StringList.StorePurchaseAlready);
                 }
                 break;
             case IAPState.CASH:
                 if (GlobalData.IsCanBuyProduct())
                 {
-                    GoogleIAP.PurchaseProduct(GetProductId());
+                    if (IsCanBuyProduct(pId))
+                        GoogleIAP.PurchaseProduct(pId);
+                    else
+                        SetClickProduct(StringList.StorePurchaseAlready);
                 }
                 break;
             default:
@@ -75,9 +84,28 @@ public class UIProduct : MonoBehaviour
         }
     }
 
+    bool IsCanBuyProduct(string id)
+    {
+        var type = GoogleIAPProductConverter.GetProductType(GetProductId());
+        switch (type)
+        {
+            case ProductTypes.DELETE_GOLD_ADS:
+                if (GlobalData.IsDeleteAds)
+                    return false;
+                break;
+            case ProductTypes.DELETE_CASH_ADS:
+                if (GlobalData.IsDeleteAds)
+                    return false;
+                break;
+            default:
+                return false;
+        }
+        return true;
+    }
+
     public virtual string GetProductId()
     {
-        return GoogleIAPProductConverter.GetProductId(productIdIndex);
+        return productItemData.productId;
     }
 
     public void SetClickProduct(string message)
@@ -85,6 +113,12 @@ public class UIProduct : MonoBehaviour
         SetNoticeLocalizationString("Language", message);
         SetPurchaseOk();
         Invoke("SetNoticeActive", 0.1f);
+    }
+
+    void SetNoticeActive()
+    {
+        var noticePopup = PopupStack.PopupShow<NoticePopup>(PopupPath.PopupNotice);
+        noticePopup.gameObject.SetActive(true);
     }
 
     public void SetPurchaseOk()

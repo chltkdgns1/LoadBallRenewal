@@ -252,6 +252,10 @@ MonoBehaviour:
       \uC218 \uC5C6\uC2B5\uB2C8\uB2E4."
     m_Metadata:
       m_Items: []
+  - m_Id: 125547642003296256
+    m_Localized: "\uC0C1\uD488 \uC900\uBE44 \uC911 \uC785\uB2C8\uB2E4."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

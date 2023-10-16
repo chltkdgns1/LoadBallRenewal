@@ -33,6 +33,8 @@ public class PopupStore : PopupStack
         {
             storeMenu[i].SetData(productItemDataList[i], OnMenu);
         }
+
+        OnMenu(0);
     }
 
     public void SetCoin()
@@ -48,9 +50,8 @@ public class PopupStore : PopupStack
 
     public void OnMenu(int index)
     {
-        if (index < 0 || storeMenu.Length >= index)
+        if (index < 0 || storeMenu.Length <= index)
         {
-            Debug.LogError("public void OnMenu(int index) out of index : " + index);
             return;
         }
 

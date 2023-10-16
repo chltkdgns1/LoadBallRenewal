@@ -37,8 +37,13 @@ public class GoogleIAPProductConverter
         }
     }
 
-    static public string GetProductId(int index)
+    public static ProductTypes GetProductType(string id)
     {
-        return productId[index];
+        if (id.Equals("addeleteproduct"))
+        {
+            return ProductTypes.DELETE_CASH_ADS;
+        }
+
+        return ProductTypes.DELETE_GOLD_ADS;
     }
 }

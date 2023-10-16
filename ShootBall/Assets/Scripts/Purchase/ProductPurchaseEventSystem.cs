@@ -24,25 +24,20 @@ public class ProductPurchaseEventSystem : MonoBehaviour
     static Queue<ProductPurchaseEvent> eventQueue = new Queue<ProductPurchaseEvent>();
 
     [Serializable]
-    class ProductData
+    class PendingProductInfo
     {
-        public GameObject productPrefabs;
-        public UIPendingProduct uiPendingProduct { get; set; }
+        public GameObject pendingPrefabs;
+        public UIProduct uiPendingProduct { get; set; }
 
         public void Init(Transform parent)
         {
-            var ob = Instantiate(productPrefabs, parent);
-            uiPendingProduct = ob.GetComponent<UIPendingProduct>();
-        }
-
-        public void SetActive(bool isFlag)
-        {
-            uiPendingProduct.gameObject.SetActive(isFlag);
+            var ob = Instantiate(pendingPrefabs, parent);
+            uiPendingProduct = ob.GetComponent<UIProduct>();
         }
     }
 
     [SerializeField]
-    ProductData[] productData;
+    PendingProductInfo pendingProductInfo;
 
     [SerializeField]
     Transform purchasePopupTrans;
@@ -60,40 +55,12 @@ public class ProductPurchaseEventSystem : MonoBehaviour
         }
 
         eventQueue.Clear();
-
-        if (productData == null)
-        {
-            BackEndLogger.Log("Error", BackEndLogger.LogType.ERROR, "PurchaseEventSystem Awake productData == null");
-            return;
-        }
-
-        for (int i = 0; i < productData.Length; i++)
-        {
-            productData[i].Init(purchasePopupTrans);
-        }
+        pendingProductInfo.Init(purchasePopupTrans);
     }
 
     public void OnEnable()
     {
         IsProcessState = false;
-
-        if (purchasePopupTrans == null)
-        {
-            BackEndLogger.Log("Error", BackEndLogger.LogType.ERROR, "PurchaseEventSystem OnEnable purchasePopupTrans == null");
-            return;
-        }
-
-        if (purchasePopupTrans.gameObject == null)
-        {
-            BackEndLogger.Log("Error", BackEndLogger.LogType.ERROR, "PurchaseEventSystem OnEnable purchasePopupTrans == null");
-            return;
-        }
-
-        for (int i = 0; i < productData.Length; i++)
-        {
-            productData[i].SetActive(false);
-        }
-
         purchasePopupTrans.gameObject.SetActive(false);
     }
 
@@ -113,40 +80,22 @@ public class ProductPurchaseEventSystem : MonoBehaviour
         ExcutePurchaseEvent(eventQueue.Dequeue());
     }
 
-    void PrintIndex(int index)
-    {
-        if (index < 0 || index >= productData.Length)
-        {
-            Debug.LogError("PrintIndex 인덱스 에러 " + productData.Length + " : " + index);
-            return;
-        }
-
-        for (int i = 0; i < productData.Length; i++)
-        {
-            productData[i].SetActive(false);
-        }
-
-        productData[index].SetActive(true);
-    }
-
     void ExcutePurchaseEvent(ProductPurchaseEvent evt)
     {
         purchasePopupTrans.gameObject.SetActive(true);
-        for (int i = 0; i < productData.Length; i++)
+
+        var pId = evt.product.definition.id;
+        var info = GlobalData.GetProductInfo(pId);
+
+        if (info == null)
         {
-            if (productData[i].uiPendingProduct.GetProductId() == evt.product.definition.id)
-            {
-                Debug.LogWarning("미결제 상품 결제 시작");
-                PrintIndex(i);
-                evt.complete += FinishProcessstate;
-                //evt.act(evt.product, evt.complete);
-                StartCoroutine(WaitAction(evt));
-                return;
-            }
+            Debug.LogError("ExcutePurchaseEvent - info is null");
+            return;
         }
 
-        Debug.LogError(evt.product.definition.id + " 제품 등록되지 않은 아이디");
-        // 미결제된 안내 상품을 출력함..
+        pendingProductInfo.uiPendingProduct.SetData(info);
+        evt.complete += FinishProcessstate;
+        StartCoroutine(WaitAction(evt));
     }
 
     IEnumerator WaitAction(ProductPurchaseEvent evt)

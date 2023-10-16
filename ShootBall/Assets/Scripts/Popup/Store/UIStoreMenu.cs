@@ -21,20 +21,51 @@ public class UIStoreMenu : MonoBehaviour
     [SerializeField]
     GameObject productPrefab;
 
+    [SerializeField]
+    Transform scrollView;
+
+    int itemSize = 0;
+
     public void SetData(List<ProductItemData> productItemDataList, Action<int> act)
     {
-        for(int i = 0; i < productItemDataList.Count; i++)
+        this.act = act;
+
+        if (productPrefab == null)
+            return;
+
+        if(productList.Count < productItemDataList.Count)
         {
-            var uiProduct = Instantiate(productPrefab, transform).GetComponent<UIProduct>();
-            uiProduct.SetData(productItemDataList[i]);
-            productList.Add(uiProduct);
+            for (int i = 0; i < productItemDataList.Count - productList.Count; i++)
+            {
+                var uiProduct = Instantiate(productPrefab, scrollView).GetComponent<UIProduct>();
+                productList.Add(uiProduct);
+            }
+        }
+        else
+        {
+            for (int i = productItemDataList.Count; i < productList.Count; i++)
+            {
+                productList[i].gameObject.SetActive(false);
+            }
         }
 
-        this.act = act;
+        itemSize = productItemDataList.Count;
+
+        for (int i = 0; i < productItemDataList.Count; i++)
+        {
+            productList[i].SetData(productItemDataList[i]);
+        }
     }
 
     public void OnClick()
     {
+        if(productPrefab == null)
+        {
+            Popup<NoticePopup>.ShowPopup(PopupPath.PopupNotice, StringList.LanguageTable, StringList.StoreReadyProduct);
+            act?.Invoke(0);
+            return;
+        }
+
         act?.Invoke(menuIndex);
     }
 
@@ -48,7 +79,7 @@ public class UIStoreMenu : MonoBehaviour
         imgLine.color = color;
         txt.color = color;
 
-        for(int i = 0; i < productList.Count; i++)
+        for(int i = 0; i < itemSize; i++)
         {
             productList[i].gameObject.SetActive(isOn);
         }
