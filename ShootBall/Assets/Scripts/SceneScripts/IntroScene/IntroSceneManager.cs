@@ -147,7 +147,12 @@ public class IntroSceneManager : MonoBehaviour
             GoogleLogin.OnLogin(() =>
             {
                 Debug.Log("로그인 성공 뒤끝 로그인 시작");
-
+#if DEV
+                GlobalData.IsGoogleLogin = true;
+                Debug.Log("Start Login Call Back");
+                loadingOb.SetActive(false);
+                LoadSceneManager.instance.LoadScene(StringList.LobbyScene);
+#else
                 BackEndUser.Instance.LoginBackEnd((result) =>
                 {
                     if (result == true)
@@ -172,6 +177,7 @@ public class IntroSceneManager : MonoBehaviour
                         ShowQuitPopup(StringList.OffLineNotice);
                     }
                 });
+#endif
             },
             () =>
             {

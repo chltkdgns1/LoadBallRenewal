@@ -6,8 +6,9 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.Purchasing;
+using UnityEngine.Purchasing.Extension;
 
-public class GoogleIAP : MonoBehaviour, IStoreListener
+public class GoogleIAP : MonoBehaviour, IStoreListener, IDetailedStoreListener
 {
     static GoogleIAP instance = null;
     private static IStoreController m_StoreController;
@@ -48,6 +49,7 @@ public class GoogleIAP : MonoBehaviour, IStoreListener
 
     void Init()
     {
+        Debug.LogWarning("GoogleIAP Start");
         purchaseProductId = null;
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
 
@@ -57,7 +59,7 @@ public class GoogleIAP : MonoBehaviour, IStoreListener
         {
             builder.AddProduct(prData[i].productId, ProductType.Consumable, new IDs
                 {
-                    {prData[i].productName,GooglePlay.Name }
+                    {prData[i].productId,GooglePlay.Name }
                 });
         }
 
@@ -114,6 +116,12 @@ public class GoogleIAP : MonoBehaviour, IStoreListener
     {
         purchaseProductId = null;
         Debug.Log(string.Format("OnPurchaseFailed: FAIL. Product: '{0}', PurchaseFailureReason: {1}", product.definition.storeSpecificId, failureReason));
+    }
+
+    public void OnPurchaseFailed(Product product, PurchaseFailureDescription failureDescription)
+    {
+        purchaseProductId = null;
+        Debug.Log(string.Format("OnPurchaseFailed: FAIL. Product: '{0}', PurchaseFailureReason: {1}", product.definition.storeSpecificId, failureDescription));
     }
 
     public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs args)
