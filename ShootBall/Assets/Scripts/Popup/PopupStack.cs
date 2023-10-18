@@ -101,6 +101,11 @@ public class PopupStack : MonoBehaviour, IPopupStackInfo
     {
         removePopupAct?.Invoke();
         methodInfoRemove?.Invoke(RemoveObject.GetComponent(classTypeRemove), null);
+
+        if(removePopupAct == null && methodInfoRemove == null)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     protected void InitEditValue()

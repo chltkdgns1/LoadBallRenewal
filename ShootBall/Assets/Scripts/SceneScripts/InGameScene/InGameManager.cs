@@ -22,7 +22,6 @@ public partial class InGameManager : MonoBehaviour
     [SerializeField]
     LoadingComplete loadingComplete;
 
-    [SerializeField]
     GameObject[] prefabsStageArr;
 
     [SerializeField]
@@ -41,6 +40,21 @@ public partial class InGameManager : MonoBehaviour
 
         PlayingGameManager.gameState = GameState.IN_GAME_PLAY;
         PlayingGameManager.sceneState = SceneState.INGAME;
+
+        GetStagePrefabs();
+    }
+
+    void GetStagePrefabs()
+    {
+        int stageSize = GlobalData.StageSize;
+
+        prefabsStageArr = new GameObject[stageSize];
+
+        for (int i = 0; i < stageSize; i++)
+        {
+            string prefabsName = "StageLevel_" + (i + 1);
+            prefabsStageArr[i] = Resources.Load("Prefabs/InGameMap/" + prefabsName) as GameObject;
+        }
     }
 
     public void StartGame()

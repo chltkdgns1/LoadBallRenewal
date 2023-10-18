@@ -28,6 +28,9 @@ public class Timer
 
     static public void RestartTimer(double remainTime ,int key)
     {
+        if (dicTimer.ContainsKey(key) == false)
+            return;
+
         dicTimer[key].remainTime = remainTime;
         dicTimer[key].startTime = DateTime.Now;
     }
