@@ -52,6 +52,8 @@ public class ApplicationManager : MonoBehaviour
     {
         Debug.Log("Start ReadApplicationVersion");
 
+        ELKLog.Instance.SendLog(ELKLog.LogLevel.INFO, "App Start");
+
         GoogleFirebaseManager.ReadSimpleData(StringList.FirebaseAppVersion, (result, appVersion) =>
         {
             if (result == QueryAns.SUCCESS)
