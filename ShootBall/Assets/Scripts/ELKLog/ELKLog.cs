@@ -28,9 +28,9 @@ public class ELKLog : MonoSingleTon<ELKLog>
 
     public void SendLog(LogLevel logLevel, string log)
     {
-        Dictionary<string, string> dic = new Dictionary<string, string>();
-        dic.Add("logData", log);
-        StartCoroutine(CoSendLog(logLevel, JsonConvert.SerializeObject(dic)));
+        //Dictionary<string, string> dic = new Dictionary<string, string>();
+        //dic.Add("logData", log);
+        //StartCoroutine(CoSendLog(logLevel, JsonConvert.SerializeObject(dic)));
     }
 
     IEnumerator CoSendLog(LogLevel logLevel, string log)
