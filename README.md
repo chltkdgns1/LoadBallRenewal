@@ -22,4 +22,6 @@
 * 서버
   * ELK 로그 서버
 ----------------------------------------      
-
+![image](https://github.com/user-attachments/assets/09e7245e-7f2c-4932-8eaa-3e7258614050)
+![image](https://github.com/user-attachments/assets/c4ec6417-ebe9-478b-af81-dc1ffe39582f)
+![image](https://github.com/user-attachments/assets/02956c83-099a-4a13-ae16-3c2269396475)
